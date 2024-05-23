@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caderno de Exercícios: Computação Quântica</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #343a40;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .sidebar h2 {
+    margin-top: 0;
+    color: #fff;
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sidebar li {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: justify;
+  }
+
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+  }
+
+  button:hover {
+    background-color: #23272b;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-content h2 {
+    margin-top: 0;
+  }
+
+  .modal-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .modal-content li {
+    margin-bottom: 5px;
+  }
+
+  .modal-content button {
+    padding: 8px 15px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .modal-content button:hover {
+    background-color: #23272b;
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .sidebar {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 20px;
+    }
+
+    .main-content {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="main-content" id="main-content">
+    <h1>Computação Quântica</h1>
+    <form id="exercises-form">      
+      <p>1. O que é um qubit na computação quântica?</p>
+      <label><input type="radio" name="q1" value="a"> a) Um bit clássico usado em computadores tradicionais</label>
+      <label><input type="radio" name="q1" value="b"> b) A unidade de medida para dados binários</label>
+      <label><input type="radio" name="q1" value="c"> c) A unidade básica de informação na computação quântica</label>
+      <label><input type="radio" name="q1" value="d"> d) Um tipo de transistor usado em computadores quânticos</label>
+      <label><input type="radio" name="q1" value="e"> e) Nenhuma das anteriores</label>
+      
+      <p>2. Qual é a principal diferença entre um bit clássico e um qubit?</p>
+      <label><input type="radio" name="q2" value="a"> a) Um bit clássico pode representar múltiplos estados simultaneamente</label>
+      <label><input type="radio" name="q2" value="b"> b) Um qubit pode representar múltiplos estados simultaneamente</label>
+      <label><input type="radio" name="q2" value="c"> c) Um bit clássico utiliza superposição para realizar cálculos</label>
+      <label><input type="radio" name="q2" value="d"> d) Não há diferença</label>
+      <label><input type="radio" name="q2" value="e"> e) Ambos são idênticos em funcionamento</label>
+
+      <p>3. O que é superposição na computação quântica?</p>
+      <label><input type="radio" name="q3" value="a"> a) A capacidade de um qubit estar em um único estado</label>
+      <label><input type="radio" name="q3" value="b"> b) A capacidade de um qubit estar em múltiplos estados simultaneamente</label>
+      <label><input type="radio" name="q3" value="c"> c) A interação entre dois qubits</label>
+      <label><input type="radio" name="q3" value="d"> d) Um erro na medição quântica</label>
+      <label><input type="radio" name="q3" value="e"> e) Nenhuma das anteriores</label>
+      
+      <p>4. O que é emaranhamento quântico?</p>
+      <label><input type="radio" name="q4" value="a"> a) Um estado onde dois qubits estão independentes um do outro</label>
+      <label><input type="radio" name="q4" value="b"> b) Uma falha na comunicação quântica</label>
+      <label><input type="radio" name="q4" value="c"> c) Um estado onde dois qubits estão fortemente correlacionados</label>
+      <label><input type="radio" name="q4" value="d"> d) Um tipo de erro de decoerência</label>
+      <label><input type="radio" name="q4" value="e"> e) Nenhuma das anteriores</label>
+      
+      <p>5. Qual é a principal vantagem de utilizar qubits em vez de bits clássicos?</p>
+      <label><input type="radio" name="q5" value="a"> a) Qubits são mais baratos</label>
+      <label><input type="radio" name="q5" value="b"> b) Qubits permitem o processamento paralelo massivo devido à superposição</label>
+      <label><input type="radio" name="q5" value="c"> c) Qubits são mais fáceis de manipular</label>
+      <label><input type="radio" name="q5" value="d"> d) Qubits não sofrem de decoerência</label>
+      <label><input type="radio" name="q5" value="e"> e) Nenhuma das anteriores</label>
+      
+      <p>6. Como um qubit é representado visualmente?</p>
+      <label><input type="radio" name="q6" value="a"> a) Como um vetor na esfera de Bloch</label>
+      <label><input type="radio" name="q6" value="b"> b) Como um ponto em um gráfico de barras</label>
+      <label><input type="radio" name="q6" value="c"> c) Como uma linha em um gráfico de tempo</label>
+      <label><input type="radio" name="q6" value="d"> d) Como um número binário</label>
+      <label><input type="radio" name="q6" value="e"> e) Nenhuma das anteriores</label>
+      
+      <p>7. Qual componente é essencial para a construção de um computador quântico?</p>
+      <label><input type="radio" name="q7" value="a"> a) Transistores</label>
+      <label><input type="radio" name="q7" value="b"> b) Capacitores</label>
+      <label><input type="radio" name="q7" value="c"> c) Qubits</label>
+      <label><input type="radio" name="q7" value="d"> d) Resistor</label>
+      <label><input type="radio" name="q7" value="e"> e) Nenhuma das anteriores</label>
+      
+      <p>8. Qual é o papel dos algoritmos quânticos em um computador quântico?</p>
+      <label><input type="radio" name="q8" value="a"> a) Melhorar a eficiência dos computadores clássicos</label>
+      <label><input type="radio" name="q8" value="b"> b) Resolver problemas impossíveis para computadores clássicos em tempo viável</label>
+      <label><input type="radio" name="q8" value="c"> c) Aumentar a capacidade de armazenamento de dados</label>
+      <label><input type="radio" name="q8" value="d"> d) Diminuir a energia consumida pelos computadores</label>
+      <label><input type="radio" name="q8" value="e"> e) Nenhuma das anteriores</label>
+      
+      <p>9. Em qual área a computação quântica pode ter um impacto significativo?</p>
+      <label><input type="radio" name="q9" value="a"> a) Processamento de texto</label>
+      <label><input type="radio" name="q9" value="b"> b) Jogos eletrônicos</label>
+      <label><input type="radio" name="q9" value="c"> c) Criptografia</label>
+      <label><input type="radio" name="q9" value="d"> d) Edição de fotos</label>
+      <label><input type="radio" name="q9" value="e"> e) Nenhuma das anteriores</label>
+      
+      <p>10. Como a computação quântica pode revolucionar a área da medicina?</p>
+      <label><input type="radio" name="q10" value="a"> a) Melhorando a resolução de imagens médicas</label>
+      <label><input type="radio" name="q10" value="b"> b) Acelerando a descoberta de novos medicamentos</label>
+      <label><input type="radio" name="q10" value="c"> c) Facilitando a telemedicina</label>
+      <label><input type="radio" name="q10" value="d"> d) Melhorando a administração hospitalar</label>
+      <label><input type="radio" name="q10" value="e"> e) Nenhuma das anteriores</label>
+    </form>
+    <button onclick="checkAnswers()">Enviar Respostas</button>
+  </div>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>Sua Pontuação</h2>
+    <p id="score"></p>
+    <h3>Respostas Corretas</h3>
+    <ul id="correct-answers"></ul>    
+    <button onclick="closeModal()">Fechar</button>
+  </div>
+</div>
+
+<script>
+  function checkAnswers() {
+    const correctAnswers = [
+      { answer: "c", explanation: "Um qubit é o análogo quântico de um bit clássico. Enquanto um bit clássico pode ser 0 ou 1, um qubit pode estar em uma superposição de ambos os estados." },
+      { answer: "b", explanation: "A principal característica de um qubit é a superposição, que permite que ele esteja em uma combinação de estados 0 e 1 ao mesmo tempo." },
+      { answer: "b", explanation: "Superposição é uma propriedade fundamental dos qubits que permite que eles existam em múltiplos estados ao mesmo tempo, aumentando significativamente o poder de processamento." },
+      { answer: "c", explanation: "Emaranhamento é uma condição na qual dois qubits se tornam interdependentes, de modo que o estado de um qubit instantaneamente determina o estado do outro, independentemente da distância entre eles." },
+      { answer: "b", explanation: "A superposição permite que os qubits processem muitas possibilidades ao mesmo tempo, oferecendo um potencial de processamento exponencialmente maior em comparação com bits clássicos." },
+      { answer: "a", explanation: "A esfera de Bloch é uma representação gráfica do estado de um qubit, mostrando todas as possíveis superposições de 0 e 1 como pontos na superfície de uma esfera." },
+      { answer: "c", explanation: "Qubits são os blocos fundamentais dos computadores quânticos, assim como os bits são para os computadores clássicos." },
+      { answer: "b", explanation: "Algoritmos quânticos são projetados para aproveitar as propriedades únicas dos qubits, como superposição e emaranhamento, para resolver certos problemas muito mais rapidamente do que os algoritmos clássicos." },
+      { answer: "c", explanation: "A computação quântica pode quebrar os métodos de criptografia atuais e também oferecer novas formas de criptografia quântica, que são teoricamente inquebráveis." },
+      { answer: "b", explanation: "A computação quântica pode simular interações moleculares complexas de maneira muito mais eficiente do que os computadores clássicos, potencialmente acelerando o desenvolvimento de novos tratamentos e medicamentos." }
+    ];
+  
+    let score = 0;
+    const studentAnswers = [];
+    for (let i = 1; i <= correctAnswers.length; i++) {
+      const selectedAnswer = document.querySelector(`input[name=q${i}]:checked`);
+      if (selectedAnswer) {
+        studentAnswers.push({ question: i, selected: selectedAnswer.value, correct: correctAnswers[i - 1].answer, explanation: correctAnswers[i - 1].explanation });
+        if (selectedAnswer.value === correctAnswers[i - 1].answer) {
+          score++;
+        }
+      } else {
+        studentAnswers.push({ question: i, selected: null, correct: correctAnswers[i - 1].answer, explanation: correctAnswers[i - 1].explanation });
+      }
+    }
+  
+    const modal = document.getElementById('modal');
+    const scoreDisplay = document.getElementById('score');
+    const correctAnswersList = document.getElementById('correct-answers');
+  
+    scoreDisplay.textContent = `Pontuação: ${score}/${correctAnswers.length}`;
+    correctAnswersList.innerHTML = '';
+  
+    studentAnswers.forEach((answer, index) => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `<strong>Questão ${answer.question}:</strong> Sua resposta: ${answer.selected || 'Não respondida'}<br>Resposta correta: ${answer.correct}<br>${answer.explanation}`;
+      correctAnswersList.appendChild(listItem);
+    });
+  
+    modal.style.display = 'block';
+  }
+  
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
+  }
+  </script>
+  
+
+</body>
+</html>
